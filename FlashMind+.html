@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>FlashMind+</h1>
+        <h1><img src="images/logo.png" alt="FlashMind Logo" class="logo"></h1>
         
         <!-- Flashcard Container -->
         <div class="flashcard" id="flashcard">
@@ -27,13 +27,17 @@
             <button id="correct-btn">Benar</button>
             <button id="wrong-btn">Salah</button>
             <button id="add-card-btn">Tambah Kartu</button>
+            <button id="delete-btn">Hapus Kartu</button>
         </div>
 
         <!-- Form to Add New Card (Hidden by Default) -->
         <div class="add-card-form" id="add-card-form">
             <h3>Tambah Flashcard Baru</h3>
+            <div class="form-group">
             <input type="text" id="new-question" placeholder="Pertanyaan">
             <input type="text" id="new-answer" placeholder="Jawaban">
+            </div>
+            <div class="form-buttons">
             <button id="save-card-btn">Simpan</button>
             <button id="cancel-btn">Batal</button>
         </div>

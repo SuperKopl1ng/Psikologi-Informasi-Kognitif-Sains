@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cancelBtn = document.getElementById('cancel-btn');
     const newQuestionInput = document.getElementById('new-question');
     const newAnswerInput = document.getElementById('new-answer');
+    const deleteBtn = document.getElementById('delete-btn');
+    deleteBtn.addEventListener('click', deleteCurrentCard);
 
     // Sample Data
     let flashcards = [
@@ -33,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     addCardBtn.addEventListener('click', showAddCardForm);
     saveCardBtn.addEventListener('click', saveNewCard);
     cancelBtn.addEventListener('click', hideAddCardForm);
+    deleteBtn.addEventListener('click', deleteCurrentCard);
 
     // Functions
     function showCurrentCard() {
@@ -87,5 +90,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 showCurrentCard();
             }
         }
+    }
+
+    function deleteCurrentCard() {
+        if (flashcards.length === 0) return;       
+        flashcards.splice(currentCardIndex, 1);
+                
+        if (flashcards.length === 0) {
+            questionEl.textContent = "Semua kartu telah dihapus.";
+            answerEl.textContent = "";
+            return;
+        }    
+        // Pastikan index tetap valid
+        currentCardIndex = currentCardIndex % flashcards.length;
+        showCurrentCard();
     }
 });

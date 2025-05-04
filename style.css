@@ -109,8 +109,52 @@ button:hover {
 
 .add-card-form input {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-group input {
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.add-card-form button {
+    padding: 10px 20px;
     border-radius: 5px;
+    font-size: 14px;
+}
+
+.logo{
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .logo {
+        max-width: 150px;
+    }
+}
+
+#delete-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#delete-btn:hover {
+    background-color: #d32f2f;
 }
